@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Git PPT</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Git</h1>
+				</section>
+
+				<section>
+					<h2>Abstract</h2>
+					<!-- FIXME  -->
+					<ul>
+							<li>Feature</li>
+							<li>Development</li>
+							<li>First Use</li>
+							<li>Operation</li>
+							<li>Git V.S. Github</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>Feature</h2>
+					<ul>
+							<li>Distributed Revision Control</li>
+					</ul>
+					<p>Control program's version</p>
+				</section>
+
+				<section>
+					<h2>Development</h2>		
+					<ol>
+						<li>Master</li>
+						<li>Debug</li>
+						<li>NewFunction</li>
+					</ol>
+				</section>
+
+				<section>
+					<section>
+						<h2>First Use</h2>
+					</section>
+
+					<section>
+						<h2>Setup - Basic</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+# 設定使用者名稱與使用者信箱				
+git config --global user.name "UserName"
+git config --global user.email "UserE-Mail@example.com"
+						</code></pre>
+					</section>
+					
+					<section>
+
+						<h2>Setup - Advance</h2>
+						<p>設定 SSH (加密連線)</p>
+					</section>
+						
+					<section>
+						<p>Linux 用戶強制設定</p>
+						<p>上傳至遠端資料庫 (Github) 可以不用輸入帳號密碼</p>
+					</section>
+					<section>
+						<h2>Step:</h2>
+						<ol>
+							<li>檢查是否有產生過公鑰，有，請跳至步驟3</li>
+							<li>使用ssh-keygen(工具)產生公鑰與私鑰</li>
+							<li>建立 SSH-Agent</li>
+							<li>將公鑰加入 Github 帳號</li>
+							<li>測試</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Solution</h2>
+							<ul>
+								<li><a href="http://wiki.csie.ncku.edu.tw/github">Linux - 成大資工 Wiki</a></li>
+								<li><a href="http://trunk-studio.com/blog/ssh-for-windows/">Windows OS</a></li>
+							</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Operation - 1</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+# 複製 github 程式碼
+git clone "github example code"
+
+# 新建 git 資料庫
+git init
+
+# 增加追蹤檔案
+git add.
+# 確認追蹤檔案並添加註解
+git commit -m "Comment"
+
+# 查看 git 紀錄
+git log
+# 簡易 git log 紀錄圖
+git log --oneline --decorate --graph --all
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Operation - 2</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+# 建立分支
+git branch "Branch Name"
+# 切換至其他分支
+git checkout "Branch Name"
+
+# 從雲端資料庫(github)更新至本地資料庫
+git pull
+# 從本地資料庫更新至雲端資料庫
+git push
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Git V.S. Github</h2>
+					<ul>
+						<li>Git - Local Database</li>
+						<li>Github - Remote Database and more Services</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>END</h1>
+				</section>
+			
+			</div>
+		</div>
+
+
+
+
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				mouseWheel: true,
+				transition: 'slide',
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
